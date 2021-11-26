@@ -1,12 +1,14 @@
 import React from 'react'
-import {ReactComponent} from "*.svg";
 
-class ClassCounter extends ReactComponent {
-    constructor() {
+
+class ClassCounter extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             count: 0
         }
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
     }
 
     increment() {
@@ -21,7 +23,7 @@ class ClassCounter extends ReactComponent {
     render (){
         return (
             <div>
-                <h1>{this.count}</h1>
+                <h1>{this.state.count}</h1>
                 <button onClick={this.increment}>increment</button>
                 <button onClick={this.decrement}>decrement</button>
             </div>
@@ -29,4 +31,4 @@ class ClassCounter extends ReactComponent {
     }
 }
 
-export default ClassCounter;
+export default ClassCounter
